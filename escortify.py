@@ -3,33 +3,45 @@ from discord_webhook import DiscordWebhook
 from selenium.webdriver.common.by import By
 import time
 
-URL = 'https://escortify.co.nz'
-DISCORD_URL = "your discord webhook"
-ESCORT_NAME = 'Escort'
+URL = 'https://escortify.co.nz/auckland-escorts/chanelley-25434'
+DISCORD_URL = "https://discord.com/api/webhooks"
+ESCORT_NAME = 'CHANELLEY'
 
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
 last_online = None
+initial_likes = None
 
 current_time = time.time()
 formatted_time = time.strftime('%H:%M%p', time.localtime(current_time))     
 print(formatted_time)
+
 
 while True:
     driver = webdriver.Chrome(options=options)
     driver.get(URL)
     time.sleep(3) 
     status = driver.find_element(By.XPATH, '//*[@id="contact"]/div[2]/p/span[1]/span').text
+    like_button = driver.find_element(By.XPATH, '//*[@id="voting_plugin"]/div/a/span').text
 
     if last_online != status:   
         if status == "offline":
             message = f"{ESCORT_NAME} is now offline at {formatted_time}"
         else:
-            message = f"{ESCORT_NAME} is now online at {formatted_time}"
+            message = f"{ESCORT_NAME} is now 😍🥰online🥰😍 at {formatted_time}"
 
         webhook_url = DISCORD_URL
         webhook = DiscordWebhook(url=webhook_url, content=message)
         response = webhook.execute()
     last_online = status
 
-    time.sleep(600)
+    current_likes = like_button
+    if initial_likes is None:
+        initial_likes = current_likes
+    else:
+        if current_likes > initial_likes:
+            like_message = f"New like added for {ESCORT_NAME} at {formatted_time}! Total likes: {current_likes}"
+            like_webhook = DiscordWebhook(url=DISCORD_URL, content=like_message)
+            like_webhook.execute()
+
+    time.sleep(500)
