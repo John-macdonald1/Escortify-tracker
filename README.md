@@ -14,6 +14,7 @@ To start the bot just do
 `
 
 URL = 'https://escortify.com.au' - add escort URL you wish to track 
+NOTE - CODE ONLY WORKS FOR ESCORTIFY
 -
 DISCORD_URL = "your discord webhook" - https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks "how to add webhooks"
 -
