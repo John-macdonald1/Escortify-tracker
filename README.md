@@ -13,7 +13,7 @@ To start the bot just do
 `escortify.py
 `
 
-URL = 'https://escortify.com.au' - add escort URL you wish to track
+URL = 'https://escortify.co.nz' - add escort URL you wish to track
 
 NOTE - CODE ONLY WORKS FOR ESCORTIFY
 -
@@ -27,3 +27,7 @@ checks URL given every 10 minutes, can be adjusted at bottom
 `time.sleep(600)`
 
 adjust numbers to liking, numbers in seconds 
+
+
+not all escorts can be tracked 
+-
