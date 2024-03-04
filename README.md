@@ -19,8 +19,6 @@ NOTE - CODE ONLY WORKS FOR ESCORTIFY
 -
 DISCORD_URL = "your discord webhook" - https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks "how to add webhooks"
 
-ESCORT_NAME = 'Escort' - self explanatory 
-
 
 checks URL given every 10 minutes, can be adjusted at bottom 
 
