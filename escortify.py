@@ -3,8 +3,8 @@ from discord_webhook import DiscordWebhook
 from selenium.webdriver.common.by import By
 import time
 
-URL = 'https://escortify.co.nz/wellington-escorts/alicia-23780' 
-DISCORD_URL = "https://discord.com/api/webhooks/1214092858085343232/RuZkmA2DyJ6zLMXsYh57PDI6A9IDBT55UPUAFsOCHGyf9BppsmhhM7lrUNdhu_3PcA6L"
+URL = 'https://escortify.co.nz/auckland-escorts/mimi-32823' 
+DISCORD_URL = "https://discord.com/api/webhooks/1219096327204372555/tpoAPJ4YQxbkiDu_M21Qf7IkOJKVgA5bZvHU4249tOMH2-K4yJsZGxHX3m48hRbAIRn5"
 
 class escortmonitor:
     def __init__(self):
@@ -26,7 +26,7 @@ class escortmonitor:
             driver = webdriver.Chrome(options=self.options)
             driver.get(URL)
             time.sleep(4) 
-            status = driver.find_element(By.XPATH, '//*[@id="contact"]/div[2]/p/span[2]/span').text 
+            status = driver.find_element(By.XPATH, '//*[@id="contact"]/div[2]/p/span[1]/span').text 
             like_button = driver.find_element(By.XPATH, '//*[@id="voting_plugin"]/div/a/span').text
             escort_name = driver.find_element(By.XPATH, '//*[@id="xxx"]/h1').text
             current_likes = like_button
