@@ -26,6 +26,4 @@ checks URL given every 10 minutes, can be adjusted at bottom
 
 adjust numbers to liking, numbers in seconds 
 
-
-not all escorts can be tracked 
--
+code works for aus escortify as well to some extent. does not show when they go ofline as escortify.au does not have the same ofline value as nz. 
